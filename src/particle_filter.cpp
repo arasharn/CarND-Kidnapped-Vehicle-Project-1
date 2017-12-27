@@ -79,7 +79,6 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
 
 	for (int i=0;i<num_particles;i++)
 	{
-
 		double new_x, new_y, new_theta;
 
 		if (fabs(yaw_rate)<0.0001)
@@ -168,9 +167,9 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
 					distance=temp_dist;
 					map_idx=range_lm[j].id;
 				}
+			}
 			ob_m.id=map_idx;
 			observations_m.push_back(ob_m);
-			}
 		}
 
 
