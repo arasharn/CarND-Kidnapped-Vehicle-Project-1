@@ -215,13 +215,6 @@ void ParticleFilter::resample() {
 	random_device seed;
 	mt19937 random_generator(seed());
 
-	vector<double> current_weights;
-
-	for (int j = 0; j < particles.size(); j++)
-	{
-		current_weights.push_back(particles[j].weight);
-	}
-
 	discrete_distribution<> sample(weights.begin(), weights.end());
 
 	for (int i = 0; i < num_particles; i++)
